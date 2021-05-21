@@ -54,7 +54,7 @@ ctseff <- function(y, a, x, bw.seq, n.pts = 100, a.rng = c(min(a), max(a)),
   } else {  
     xa.new <- rbind(cbind(x, a), cbind(x[rep(1:n, length(a.vals)), ], a = rep(a.vals, rep(n, length(a.vals)))))
   }
-  x.new <- xa.new[, -dim(xa.new)[2]]
+  x.new <- xa.new[, -dim(xa.new)[2], drop=FALSE]
   x <- data.frame(x)
   x.new <- data.frame(x.new)
   colnames(x) <- colnames(x.new)
