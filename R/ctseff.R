@@ -50,6 +50,7 @@ ctseff <- function(y, a, x, bw.seq, n.pts = 100, a.rng = c(min(a), max(a)),
   a.vals <- seq(a.min, a.max, length.out = n.pts)
   
   if (ncol(x)==1) {
+    names(x) <- "x"
     xa.new <- rbind(cbind(x, a), cbind(x=x[rep(1:n, length(a.vals)), ], a = rep(a.vals, rep(n, length(a.vals)))))
   } else {  
     xa.new <- rbind(cbind(x, a), cbind(x[rep(1:n, length(a.vals)), ], a = rep(a.vals, rep(n, length(a.vals)))))
